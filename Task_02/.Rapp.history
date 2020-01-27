@@ -30,4 +30,31 @@ c(1, 2, 3, 4) + c(0, 10, 100)
 z * 2 + 1000
 my_div
 swirl()
-setwd("~/Desktop/Evolution/Programming/Task_02")
+setwd("~/Desktop/Evolution/Tasks/Task_02")
+beren3<-read.csv("beren_new.csv")
+Diaper<-which(beren3[,9] == "wet")
+beren3Diaper<-beren3[Diaper,]
+(beren3Diaper)
+Diaper<-which(beren3$event == "wet")
+avgDiaper<-mean(beren3$value[Diaper])
+avgDiaper<-tapply(beren3$value[Diaper], beren3$day[Diaper], mean)
+varDiaper<-tapply(beren3$value[Diaper], beren3$day[Diaper], var)
+totalDiaper<-tapply(beren3$value[Diaper], beren3$day[Diaper], sum)
+numDiaper<-tapply(beren3$value[Diaper], beren3$day[Diaper], length)
+cor(beren3$value[Diaper], beren3$day[Diaper])
+cor.test(beren3$value[Diaper], beren3$day[Diaper])
+Diaper<-which(beren3[,9] == "wet")#
+beren3Diaper<-beren3[Diaper,]#
+(beren3Diaper)#
+Diaper<-which(beren3$event == "wet")#
+avgDiaper<-mean(beren3$value[Diaper])#
+avgDiaper<-tapply(beren3$value[Diaper], beren3$age[Diaper], mean)#
+varDiaper<-tapply(beren3$value[Diaper], beren3$age[Diaper], var)#
+totalDiaper<-tapply(beren3$value[Diaper], beren3$age[Diaper], sum)#
+numDiaper<-tapply(beren3$value[Diaper], beren3$age[Diaper], length)#
+cor(beren3$value[Diaper], beren3$age[Diaper])#
+cor.test(beren3$value[Diaper], beren3$age[Diaper])#
+berenCor<-cor.test(beren3$value[Diaper], beren3$age[Diaper])#
+summary(berenCor)
+par(las=1, mar=c(5,5,1,1), mgp=c(2,0.5,0), tck=-0.01)#
+plot(as.numeric(names(totalDiaper)), totalDiaper, type="b", pch=16, xlab="day", ylab="Diaper")
