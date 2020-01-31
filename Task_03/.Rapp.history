@@ -236,3 +236,83 @@ nspeciesOverTime<-pbdb_richness(fossils, rank="genus", temporal_extent=c(MaxMA,M
 par(mar=c(4,5,2,1), las=1, tck=-0.01, mgp=c(2.5, 0.5, 0))
 plot(seq(to=MaxMA, from=MinMA, length.out=nrow(nspeciesOverTime)), nspeciesOverTime[,2], xlim=c(MaxMA, MinMA), type="l", xlab="age(millions of years ago)", ylab="num. of species", main=Taxon)
 nspeciesOverTime<-pbdb_richness(fossils, rank="genus", temporal_extent=c(MaxMA,MinMA) res=Res)
+setwd("~/Desktop/Evolution/Tasks/Task_03")#
+library(paleobioDB)
+Extension
+Taxon<-"Strigiformes"
+MaxMA<-10
+Min<-0
+fossils<-pbdb_occurrences(base_name=Taxon, show=c("phylo", "coords", "ident"), min_ma=MA, max_ma=MaxMA)
+MaxMA<-10
+MinMA<-0
+fossils<-pbdb_occurrences(base_name=Taxon, show=c("phylo", "coords", "ident"), min_ma=MA, max_ma=MaxMA)
+nspeciesOverTime<-pbdb_richness(fossils, rank="genus", res=Res)
+fossils<-pbdb_occurrences(base_name=Taxon, show=c("phylo", "coords", "ident"))
+head(fossils)
+Res<-5
+head(fossils)
+head(Taxon)
+head(nspecoesOverTime)
+nspeciesOverTime<-pbdb_richness(fossils, rank="genus", temporal_extent=c(MaxMA,MinMA) res=Res)
+nspeciesOverTime<-pbdb_richness(fossils, rank="genus", temporal_extent=c(MaxMA,MinMA), res=Res)
+par(mar=c(4,5,2,1), las=1, tck=-0.01, mgp=c(2.5, 0.5, 0))
+plot(seq(to=MaxMA, from=MinMA, length.out=nrow(nspeciesOverTime)), nspeciesOverTime[,2], xlim=c(MaxMA,MinMA), type="l", xlab="age(millions of years ago)", ylab="num. of species", main=Taxon)
+Taxon2<-"Cetacea"
+MaxMA<-10
+MinMA<-0
+fossils2<-pbdb_occurrences(base_name=Taxon2, show=c("phylo", "coords", "ident"))
+nspeciesOverTime2<-pbdb_richness(fossils2, rank="genus", temporal_extent=c(MaxMA,MinMA), res=Res)
+par(mar=c(4,5,2,1), las=1, tck=-0.01, mgp=c(2.5, 0.5, 0))
+plot(seq(to=MaxMA, from=MinMA, length.out=nrow(nspeciesOverTime2)), nspeciesOverTime2[,2], xlim=c(MaxMA,MinMA), type="l", xlab="age(millions of years ago)", ylab="num. of species", main=Taxon2)
+plot(seq(to=MaxMA, from=MinMA, length.out=nrow(nspeciesOverTime)), nspeciesOverTime[,2], xlim=c(MaxMA, MinMA), type="l", xlab="age(millions of years ago)", ylab="num. of species", main=Taxon)
+LineWidth<-2
+plot(seq(to=MaxMA, from=MinMA, length.out=nrow(nspeciesOverTime)), nspeciesOverTime[,2], xlim=c(MaxMA, MinMA), type="l", xlab="age(millions of years ago)", ylab="num. of species", main=Taxon)
+lines(seq(to=MaxMA, from=MinMA, length.out=nrow(nspeciesOverTime2)), nspeciesOverTime2[,2], lwd=LineWidth)
+lengend("topleft", legend=c(Taxon, Taxon2), bty="n", lwd=LineWidth)
+legend("topleft", legend=c(Taxon, Taxon2), bty="n", lwd=LineWidth)
+plot(seq(to=MaxMA, from=MinMA, length.out=nrow(nspeciesOverTime)), nspeciesOverTime[,2], xlim=c(MaxMA, MinMA), type="l", xlab="age(millions of years ago)", ylab="num. of species", main=Taxon)
+library(paleobioDB)
+#Extension
+Taxon<-"Strigiformes"
+MaxMA<-10
+Min<-0
+fossils<-pbdb_occurrences(base_name=Taxon, show=c("phylo", "coords", "ident"))
+Res<-5
+nspeciesOverTime<-pbdb_richness(fossils, rank="genus", temporal_extent=c(MaxMA,MinMA), res=Res)
+par(mar=c(4,5,2,1), las=1, tck=-0.01, mgp=c(2.5, 0.5, 0))
+plot(seq(to=MaxMA, from=MinMA, length.out=nrow(nspeciesOverTime)), nspeciesOverTime[,2], xlim=c(MaxMA,MinMA), type="l", xlab="age(millions of years ago)", ylab="num. of species", main=Taxon)
+Taxon2<-"Cetacea"
+MaxMA<-10
+MinMA<-0
+fossils2<-pbdb_occurrences(base_name=Taxon2, show=c("phylo", "coords", "ident"))
+Res<-5
+nspeciesOverTime2<-pbdb_richness(fossils2, rank="genus", temporal_extent=c(MaxMA,MinMA), res=Res)
+par(mar=c(4,5,2,1), las=1, tck=-0.01, mgp=c(2.5, 0.5, 0))
+LineWidth<-2
+> plot(seq(to=MaxMA, from=MinMA, length.out=nrow(nspeciesOverTime)), nspeciesOverTime[,2], xlim=c(MaxMA, MinMA), type="l", xlab="age(millions of years ago)", ylab="num. of species", main=Taxon)
+plot(seq(to=MaxMA, from=MinMA, length.out=nrow(nspeciesOverTime)), nspeciesOverTime[,2], xlim=c(MaxMA, MinMA), type="l", xlab="age(millions of years ago)", ylab="num. of species", main=Taxon)
+> lines(seq(to=MaxMA, from=MinMA, length.out=nrow(nspeciesOverTime2)), nspeciesOverTime2[,2], lwd=LineWidth)
+lines(seq(to=MaxMA, from=MinMA, length.out=nrow(nspeciesOverTime2)), nspeciesOverTime2[,2], lwd=LineWidth)
+> legend("topleft", legend=c(Taxon, Taxon2), bty="n", lwd=LineWidth)
+legend("topleft", legend=c(Taxon, Taxon2), bty="n", lwd=LineWidth)
+plot(seq(to=MaxMA, from=MinMA, length.out=nrow(nspeciesOverTime2)), nspeciesOverTime2[,2], xlim=c(MaxMA, MinMA), type="l", xlab="age(millions of years ago)", ylab="num. of species", main=Taxon2)
+plot(seq(to=MaxMA, from=MinMA, length.out=nrow(nspeciesOverTime)), nspeciesOverTime[,2], xlim=c(MaxMA, MinMA), type="l", xlab="age(millions of years ago)", ylab="num. of species", main=Taxon)
+plot2(seq(to=MaxMA, from=MinMA, length.out=nrow(nspeciesOverTime2)), nspeciesOverTime2[,2], xlim=c(MaxMA, MinMA), type="l", xlab="age(millions of years ago)", ylab="num. of species", main=Taxon2)
+plot(seq(to=MaxMA, from=MinMA, length.out=nrow(nspeciesOverTime, nspeciesOverTime2)), (nspeciesOverTime, nspeciesOverTime2[,2]), xlim=c(MaxMA, MinMA), type="l", xlab="age(millions of years ago)", ylab="num. of species", main=Taxon,Taxon2)
+plot(seq(to=MaxMA, from=MinMA, length.out=nrow(nspeciesOverTime, nspeciesOverTime2)), nspeciesOverTime, nspeciesOverTime2[,2], xlim=c(MaxMA, MinMA), type="l", xlab="age(millions of years ago)", ylab="num. of species", main=Taxon,Taxon2)
+plot(seq(to=MaxMA, from=MinMA, length.out=nrow(nspeciesOverTime, nspeciesOverTime2)), nspeciesOverTime[,2], xlim=c(MaxMA, MinMA), type="l", xlab="age(millions of years ago)", ylab="num. of species", main=Taxon,Taxon2)
+plot(seq(to=MaxMA, from=MinMA, length.out=nrow(nspeciesOverTime)), nspeciesOverTime[,2], xlim=c(MaxMA, MinMA), type="l", xlab="age(millions of years ago)", ylab="num. of species", main=Taxon,Taxon2)
+plot(seq(to=MaxMA, from=MinMA, length.out=nrow(nspeciesOverTime)), nspeciesOverTime[,2], xlim=c(MaxMA, MinMA), type="l", xlab="age(millions of years ago)", ylab="num. of species", main=Taxon)
+lines(seq(to=MaxMA, from=MinMA, length.out=nrow(nspeciesOverTime2)), nspeciesOverTime2[,2], lwd=LineWidth)
+legend("topleft", legend=c(Taxon, Taxon2), bty="n", lwd=LineWidth)
+plot=add(seq(to=MaxMA, from=MinMA, length.out=nrow(nspeciesOverTime2)), nspeciesOverTime2[,2], xlim=c(MaxMA, MinMA), type="l", xlab="age(millions of years ago)", ylab="num. of species", main=Taxon2)
+plot(seq(to=MaxMA, from=MinMA, length.out=nrow(nspeciesOverTime2)), nspeciesOverTime2[,2], xlim=c(MaxMA, MinMA), type="l", xlab="age(millions of years ago)", ylab="num. of species", main=Taxon2)
+# Hypothesis: Strigiformes will increase as Cetacea decrease.
+library(fishbase)
+library(rfishbase)
+install.packages(fishbase)
+install.packages ("fishbase")
+install.packages ("InterMineR")
+library(fishbase)
+install.packages ("rfishbase")
+library(rfishbase)
