@@ -112,4 +112,11 @@ Line2<-lm(tExt~Samples+0)
  # as population size increases the dots are more spread from the line
  # meaning there is more variation within the population
  
- 
+install.packages("sandwich")
+library(sandwich)
+
+reg_ex1<-lm(lwage~exper+log(huswage),data=Samples)
+
+lm(lwage~exper+log(huswage), data=Samples)
+vcv <- vcovHAC(reg_ex1)
+vcv<-vcovHAC(reg_exl)
