@@ -38,7 +38,6 @@ coalescent.plot()
 ?coalescent.plot()
 install.packages("learnPopGen")
 ?coalescent.plot()
-?coalescent.plot()
 library(learnPopGen)
 ?coalescent.plot()
 coalescent.plot(n=5, ngen=10, col.order="alternating")
@@ -112,8 +111,6 @@ outPhy<-read.tree(text=stats$trees[[locus]][n])
 else{
 out Phy<-ape:::c.phylo(outPhy, read.tree(text=stats$trees[[locus]][n]))
 }
-}
-}
 for(locus in 1:Nloci) {
 ntrees<-length(stats$trees[[locus]])
 for(n in 1:ntrees) {
@@ -135,8 +132,6 @@ outPhy<-read.tree(text=stats$trees[[locus]][n])
 else {
 outPhy<-ape:::c.phylo(outPhy, read.tree(text=stats$trees[[locus]][n]))
 }
-}
-}
 par(mfrow=c(1,1))
 densityTree(outPhy)
 model3<-coal_model(10, 50) +
@@ -149,10 +144,7 @@ par(mfrow=c(1,2))
 plot(mean_pi)
 axisPhylo()
 plot(theta)
-plot(theta)
-plot(theta)
 axisPhylo()
-compare.chronograms(mean_pi,theta)
 compare.chronograms(mean_pi,theta)
 compare(mean_pi,theta)
 compare.plot(mean_pi,theta)
