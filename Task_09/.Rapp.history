@@ -1,0 +1,100 @@
+task01.r
+open task01.r
+install.packages("swirl")
+install.packages (''swirl'')#
+library (swirl)
+install.packages("swirl")#
+library(swirl)
+install.packages ("swirl")#
+library (swirl)
+swirl()
+5 + 7
+x <- 5 + 7
+x
+y <- x-3
+y
+c(1.1, 9, 3.14)
+z <- c(1.1, 9, 3.14)
+?c
+z
+z + 555 / z
+c(z, 555, z)
+z * 2 + 100
+my_sqrt <- sqrt(z - 1)
+my_sqrt
+my_div <- z / my_sqrt
+my_div
+c(1, 2, 3, 4)
+c(1, 2, 3, 4) + c(0, 10)
+c(1, 2, 3, 4) + c(0, 10, 100)
+z * 2 + 1000
+my_div
+swirl()
+setwd("~/Desktop/Evolution/Tasks/Task_09")
+library(phytools)
+tree <- read.tree("http://www.phytools.org//Cordoba2017//data//Anolis.tre")
+p lot ( t r e e , type=” f an ” )
+plot(tree, type="fan")
+#question1 : 100
+data <- read.csv("https://jonsmitchell.com/data/svl.csv", stringsAsFactors=F, row.names=1)
+#question 2
+dim(data)
+svl<-setNames(data$svl, rownames(data))
+Ancestors<-fastAnc(tree,svl,vars=TRUE, CI=TRUE)
+#question 2: data is the snout-vent length and its dimensions are 100x1
+Ancestors<-fastAnc(tree,svl,vars=TRUE, CI=TRUE)
+head(data)
+range(svl)
+fit<-fastAnc(tree,svl,vars=TRUE,CI=TRUE)
+print(fit,printlen=10)
+#Question 3: The estimated values are stored as "objects". Above are the 95% confidence intervales
+#Q3 continued: but here is the range for it
+range(svl)
+#Question 4:uncertainty for ancestral traits and probabilities that traits will be pasted on
+par(mar=c(0.1,0.1,0.1,0.1))
+plot(tree, type="fan", lwd=2, show.tip.label=F)
+tiptabels(pch=16,cex=0.25*svl[tree$tip.label])
+tiplabels(pch=16,cex=0.25*svl[tree$tip.label])
+nodelabels(pch=16,cex=0.25*Ancestor$ace)
+nodelabels(pch=16,cex=0.25*Ancestors$ace)
+onj<-contMap(tree,svl,plot=F)
+obj<-contMap(tree,svl,plot=F)
+plot(obj,type="fan", legend=0.7*max(nodeHeights(tree)), sig=2,fsize=c(0.7,0.9))
+fossilData<-data.frame(svl=log(c(25.4, 23.2,17.7,19.7,24,31)),tip1=c(88"aliniger","aliniger"."occultus","christophei","cristatellus","occultus"),tip2=c("chlorocyanus","coelestinus","monticola","cybotes","angusticeps","angusticeps"))
+fossilData<-data.frame(svl=log(c(25.4, 23.2,17.7,19.7,24,31)),tip1=c("aliniger","aliniger"."occultus","christophei","cristatellus","occultus"),tip2=c("chlorocyanus","coelestinus","monticola","cybotes","angusticeps","angusticeps"))
+fossilData<-data.frame(svl=log(c(25.4,  23.2, 17.7, 19.7, 24, 31)), tip1=c("aliniger","aliniger","occultus","christophei","cristatellus","occultus"), tip2=c("chlorocyanus","coelestinus","monticola","cybotes","angusticeps","angusticeps"))
+fossilNodes<-c()
+nodeN<-c()
+Node<-fastMRCA(tree.fossilData[i,"tip1"], fossilData[i,"tip2"])
+fossilNodes<-c(fossilData)
+nodeN<-c(tree.fossilData)
+fossilNodes<-c(tree.fossilData)
+fossilNodes<-c(fossilData)
+nodeN<-c(fossilNodes)
+Node<-fastMRCA(tree.fossilData[i,"tip1"], fossilData[i,"tip2"])
+Node<-fastMRCA(tree,fossilData[i,"tip1"], fossilData[i,"tip2"])
+fossilNodes<-c(tip1,tip2)
+fossilNodes<-c(tip1)
+fossilNodes<-c(tip1=c("aliniger","aliniger","occultus","christophei","cristatellus","occultus"), tip2=c("chlorocyanus","coelestinus","monticola","cybotes","angusticeps","angusticeps"))
+nodeN<-c(fossilNodes)
+Node<-fastMRCA(tree, fossilData [i,"tip1"], fossilData[i,"tip2"])
+Node<-fastMRCA(tree, fossilData ["tip1"], fossilData["tip2"])
+fossilNodes<-c([i, tip1=c("aliniger","aliniger","occultus","christophei","cristatellus","occultus")], [i,tip2=c("chlorocyanus","coelestinus","monticola","cybotes","angusticeps","angusticeps")])
+fossilNodes<-c((i, tip1=c("aliniger","aliniger","occultus","christophei","cristatellus","occultus")), (i,tip2=c("chlorocyanus","coelestinus","monticola","cybotes","angusticeps","angusticeps")))
+nodeN<-c(fossilNodes)
+fossilNodes<-c((i tip1=c("aliniger","aliniger","occultus","christophei","cristatellus","occultus")), (i,tip2=c("chlorocyanus","coelestinus","monticola","cybotes","angusticeps","angusticeps")))
+fossilNodes<-c((tip1=c("aliniger","aliniger","occultus","christophei","cristatellus","occultus"),i), (tip2=c("chlorocyanus","coelestinus","monticola","cybotes","angusticeps","angusticeps"),i))
+fossilNodes<-c((tip1=c("aliniger","aliniger","occultus","christophei","cristatellus","occultus"),i)(tip2=c("chlorocyanus","coelestinus","monticola","cybotes","angusticeps","angusticeps"),i))
+fossilNodes<-c((tip1=c("aliniger","aliniger","occultus","christophei","cristatellus","occultus") i),(tip2=c("chlorocyanus","coelestinus","monticola","cybotes","angusticeps","angusticeps") i))
+fossilNodes<-c((tip1=c("aliniger","aliniger","occultus","christophei","cristatellus","occultus")),(tip2=c("chlorocyanus","coelestinus","monticola","cybotes","angusticeps","angusticeps")))
+nodeN<-c(fossilNodes)
+Node<-fastMRCA(tree, fossilData [i,"tip1"], fossilData[i,"tip2"])
+fossilNodes[i]<-fossilData[i,"svl"]
+nodeN[i]<-Node
+fossilNodes<-c((tip1=c("aliniger","aliniger","occultus","christophei","cristatellus","occultus")),(tip2=c("chlorocyanus","coelestinus","monticola","cybotes","angusticeps","angusticeps")))
+nodeN<-c(i,fossilNodes)
+nodeN<-c(fossilNodes)
+fossilNodes<-c([i,tip1],[1,tip2])
+fossilNodes<-c((tip1=c("aliniger","aliniger","occultus","christophei","cristatellus","occultus")),(tip2=c("chlorocyanus","coelestinus","monticola","cybotes","angusticeps","angusticeps")))
+nodeN<-c(fossilNodes)
+Node<-fastMRCA(tree, fossilData [i,"tip1"], fossilData[i,"tip2"])
