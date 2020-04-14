@@ -1,0 +1,355 @@
+install.packages (''swirl'')#
+library (swirl)
+install.packages("swirl")#
+library(swirl)
+install.packages ("swirl")#
+library (swirl)
+swirl()
+5 + 7
+x <- 5 + 7
+x
+y <- x-3
+y
+c(1.1, 9, 3.14)
+z <- c(1.1, 9, 3.14)
+?c
+z
+z + 555 / z
+c(z, 555, z)
+z * 2 + 100
+my_sqrt <- sqrt(z - 1)
+my_sqrt
+my_div <- z / my_sqrt
+my_div
+c(1, 2, 3, 4)
+c(1, 2, 3, 4) + c(0, 10)
+c(1, 2, 3, 4) + c(0, 10, 100)
+z * 2 + 1000
+my_div
+swirl()
+install.packages('ctv')
+library(apes)
+library(ape)
+tree<-read.tree('dogs(3).tre')
+x <- read.table("http://esapubs.org/Archive/ecol/E090/184/PanTHERIA_1-0_WR05_Aug2008.txt", sep = "\t", stringsAsFactors=F)
+Group <- which(x[,1] == "Carnivoa")
+COL<-red
+COL <- '#fc8d62'
+points(Size[Group], PopDen[Group], pch=21, bg=COL, cex=1.1)
+install.packages("ggtree")
+library(ggtree)
+install.packages("tidyverse")
+library(tidyjson)
+install.packages("tidyjson")
+install.packages("ape")
+install.packages("dplyr")
+install.packages("purrr")
+BreedTree<- read.nexus("https://raw.githubusercontent.com/luisDVA/codeluis/master/dogtree.txt")
+install.packages("tidyjson")
+install.packages("dplyr")
+library(tidyjson)
+library(dplyr)
+dogAttributes<-"https://raw.githubusercontent.com/ericdrowell/DogBreedChart/master/dogs.json" %>% as.tbl_json()
+dogAttributesTbl <-
+dogAttributes %>%
+gather_keys() %>%
+gather_array() %>%
+spread_values(
+id = jstring("id"),
+breedname = jstring("name"),
+size = jnumber("size"),
+kidFriendly = jnumber("kidFriendly"),
+dogFriendly = jnumber("dogFriendly"),
+shedding = jnumber("lowShedding"),
+grooming_ease = jnumber("easyToGroom"),
+energy = jnumber("highEnergy"),
+health = jnumber("goodHealth"),
+low_barking = jnumber("lowBarking"),
+smart = jnumber("intelligence"),
+trainable = jnumber("easyToTrain"),
+heat_tolerance = jnumber("toleratesHot"),
+cold_tolerance = jnumber("toleratesCold")
+) %>%
+select(-document.id,-key,-array.index,-id)
+dogAttributes<-"https://raw.githubusercontent.com/ericdrowell/DogBreedChart/master/dogs.json" %>% as.tbl_json()
+dogAttributesTbl <-
+dogAttributes %>%
+gather_object() %>%
+gather_array() %>%
+spread_values(
+id = jstring("id"),
+breedname = jstring("name"),
+size = jnumber("size"),
+kidFriendly = jnumber("kidFriendly"),
+dogFriendly = jnumber("dogFriendly"),
+shedding = jnumber("lowShedding"),
+grooming_ease = jnumber("easyToGroom"),
+energy = jnumber("highEnergy"),
+health = jnumber("goodHealth"),
+low_barking = jnumber("lowBarking"),
+smart = jnumber("intelligence"),
+trainable = jnumber("easyToTrain"),
+heat_tolerance = jnumber("toleratesHot"),
+cold_tolerance = jnumber("toleratesCold")
+) %>%
+select(-document.id,-key,-array.index,-id)
+rlang::last_error()
+dogAttributes<-"https://raw.githubusercontent.com/ericdrowell/DogBreedChart/master/dogs.json" %>% as.tbl_json()
+dogAttributesTbl <-
+dogAttributes %>%
+gather_object() %>%
+gather_array() %>%
+spread_values(
+id = jstring("id"),
+breedname = jstring("name"),
+size = jnumber("size"),
+kidFriendly = jnumber("kidFriendly"),
+dogFriendly = jnumber("dogFriendly"),
+shedding = jnumber("lowShedding"),
+grooming_ease = jnumber("easyToGroom"),
+energy = jnumber("highEnergy"),
+health = jnumber("goodHealth"),
+low_barking = jnumber("lowBarking"),
+smart = jnumber("intelligence"),
+trainable = jnumber("easyToTrain"),
+heat_tolerance = jnumber("toleratesHot"),
+cold_tolerance = jnumber("toleratesCold")
+) %>%
+select(-document.id,-key,-array.index,-id)
+dogAttributesTblF <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/master/dogTraits.csv",stringsAsFactors = F)
+select(breedname=Breed,Abrev.,Clade)
+install.packages("fuzzyjoin")
+library(fuzzyjoin)
+joinedTabs <- stringdist_left_join(breedsTable,dogAttributesTblF,max_dist=2)
+install.packages("ape")
+install.packages("dplyr")
+install.packages("purrr")
+library(ape)
+library(dplyr)
+library(purrr)
+BreedTree<- read.nexus("https://raw.githubusercontent.com/luisDVA/codeluis/master/dogtree.txt")
+tipsbreeds<-BreedTree$tip.label
+tipsbreeds
+splitbreed<- strsplit(tipsbreeds,"_") %>% map_chr(pluck(1)) %>% unique()
+splitbreed
+ii<-splitbreed %>% set_names() %>%  map(~grep(.x,tipsbreeds)) %>% map_int(pluck(1))
+BreedTreeTrimmed<-drop.tip(BreedTree,setdiff(BreedTree$tip.label,tipsbreeds[ii]))
+BreedTreeTrimmed$tip.label<- strsplit(BreedTreeTrimmed$tip.label,"_") %>% map_chr(pluck(1))
+plot(BreedTreeTrimmed)
+install.packages("geiger")
+library(geiger)
+row.names(dogsAttrFilt) <- dogsAttrFilt$Abrev.
+row.names(dogsAttributesFilt) <- dogsAttrributesFilt$Abrev.
+install.packages("tidyjson")
+install.packages("dplyr")
+install.packages("fuzzyjoin")
+install.packages("ape")
+install.packages("dplyr")
+install.packages("purrr")
+install.packages("geiger")
+library(tidyjson)
+library(dplyr)
+install.packages("tidyjson")
+install.packages("dplyr")
+library(tidyjson)
+library(dplyr)
+dogAttributes<-"https://raw.githubusercontent.com/ericdrowell/DogBreedChart/master/dogs.json" %>% as.tbl_json()
+dogAttributesTbl <-
+dogAttributes %>%
+gather_object() %>%
+gather_array() %>%
+spread_values(
+id = jstring("id"),
+breedname = jstring("name"),
+size = jnumber("size"),
+kidFriendly = jnumber("kidFriendly"),
+dogFriendly = jnumber("dogFriendly"),
+shedding = jnumber("lowShedding"),
+grooming_ease = jnumber("easyToGroom"),
+energy = jnumber("highEnergy"),
+health = jnumber("goodHealth"),
+low_barking = jnumber("lowBarking"),
+smart = jnumber("intelligence"),
+trainable = jnumber("easyToTrain"),
+heat_tolerance = jnumber("toleratesHot"),
+cold_tolerance = jnumber("toleratesCold")
+) %>%
+select(-document.id,-key,-array.index,-id)
+dogAttributesTblF <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/master/dogTraits.csv",stringsAsFactors = F)
+breedsTable <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/master/dogTable.csv",stringsAsFactors = FALSE, na.strings = "") %>%
+select(breedname=Breed,Abrev.,Clade)
+install.packages("fuzzyjoin")
+library(fuzzyjoin)
+joinedTabs <- stringdist_left_join(breedsTable,dogAttributesTblF,max_dist=2)
+length(which(is.na(joinedTabs$breedname.y)==FALSE))
+dogsAttrFilt <- joinedTabs %>% filter(!is.na(breedname.y))
+install.packages("ape")
+install.packages("dplyr")
+install.packages("purrr")
+library(ape)
+library(dplyr)
+library(purrr)
+BreedTree<- read.nexus("https://raw.githubusercontent.com/luisDVA/codeluis/master/dogtree.txt")
+tipsbreeds<-BreedTree$tip.label
+tipsbreeds
+splitbreed<- strsplit(tipsbreeds,"_") %>% map_chr(pluck(1)) %>% unique()
+splitbreed
+ii<-splitbreed %>% set_names() %>%  map(~grep(.x,tipsbreeds)) %>% map_int(pluck(1))
+BreedTreeTrimmed<-drop.tip(BreedTree,setdiff(BreedTree$tip.label,tipsbreeds[ii]))
+BreedTreeTrimmed$tip.label<- strsplit(BreedTreeTrimmed$tip.label,"_") %>% map_chr(pluck(1))
+plot(BreedTreeTrimmed)
+install.packages("geiger")
+library(geiger)
+row.names(dogsAttrFilt) <- dogsAttrFilt$Abrev.
+BreedTreeF <- treedata(phy=BreedTreeTrimmed,data = dogsAttrFilt, sort = TRUE)$phy
+dogTraitsF <- treedata(phy=dogtreeTrimmed,data = dogsAttrFilt, sort = TRUE)$data
+dogTraitsF <- treedata(phy=BreedTreeTrimmed,data = dogsAttrFilt, sort = TRUE)$data
+dogTraitsF <- data.frame(dogTraitsF)
+dogTraitsFnum$tiplabs <- gsub(" ","_",dogTraitsFnum$breedname.y)
+dogTraitsFnum <- dogTraitsF %>% mutate_at(5:16,funs(as.numeric))
+dogTraitsFnum$tiplabs <- gsub(" ","_",dogTraitsFnum$breedname.y)
+dogTreeF$tip.label <- dogTraitsFnum$tiplabs
+BreedTreeF$tip.label <- dogTraitsFnum$tiplabs
+source("https://bioconductor.org/biocLite.R")
+install.packages("BiocManager")
+source("https://bioconductor.org/biocLite.R")
+library(ggtree)
+install.packages("BiocManager")
+library(BiocManager)
+BiocManager::install(ggtree)
+BiocManager::install("ggtree")
+library(ggtree)
+ggtree(BreedTreeF,layout="fan")+geom_tiplab2(size=2.5, align=TRUE, linesize=.5)+ggplot2::xlim(0, 4000)
+pdf("BreedTree.pdf")
+library(tidyjson)
+library(dplyr)
+install.packages("tidyjson")#
+install.packages(dplyr)#
+library(tidyjson)#
+library(dplyr)
+dogAttributesTbl <- #
+  dogAttributes %>%   #
+  gather_object() %>%   #
+  gather_array() %>% #
+  spread_values(      #
+    id = jstring("id"),#
+    breedname = jstring("name"),#
+    size = jnumber("size"),#
+    kidFriendly = jnumber("kidFriendly"),#
+    dogFriendly = jnumber("dogFriendly"),#
+    shedding = jnumber("lowShedding"),#
+    grooming_ease = jnumber("easyToGroom"),#
+    energy = jnumber("highEnergy"),#
+    health = jnumber("goodHealth"),#
+    low_barking = jnumber("lowBarking"),#
+    smart = jnumber("intelligence"),#
+    trainable = jnumber("easyToTrain"),#
+    heat_tolerance = jnumber("toleratesHot"),#
+    cold_tolerance = jnumber("toleratesCold")#
+  ) %>% #
+  select(-document.id,-key,-array.index,-id)
+rlang::last_erro()
+dogAttributesTbl <- #
+  dogAttributes %>%   #
+  gather_object() %>%   #
+  gather_array() %>% #
+  spread_values(      #
+    id = jstring("id"),#
+    breedname = jstring("name"),#
+    size = jnumber("size"),#
+    kidFriendly = jnumber("kidFriendly"),#
+    dogFriendly = jnumber("dogFriendly"),#
+    shedding = jnumber("lowShedding"),#
+    grooming_ease = jnumber("easyToGroom"),#
+    energy = jnumber("highEnergy"),#
+    health = jnumber("goodHealth"),#
+    low_barking = jnumber("lowBarking"),#
+    smart = jnumber("intelligence"),#
+    trainable = jnumber("easyToTrain"),#
+    heat_tolerance = jnumber("toleratesHot"),#
+    cold_tolerance = jnumber("toleratesCold")#
+  ) %>% #
+  select(-document.id,-object,-array.index,-id)
+dogAttributesTbl <- #
+  dogAttributes %>%   #
+  gather_objects() %>%   #
+  gather_array() %>% #
+  spread_values(      #
+    id = jstring("id"),#
+    breedname = jstring("name"),#
+    size = jnumber("size"),#
+    kidFriendly = jnumber("kidFriendly"),#
+    dogFriendly = jnumber("dogFriendly"),#
+    shedding = jnumber("lowShedding"),#
+    grooming_ease = jnumber("easyToGroom"),#
+    energy = jnumber("highEnergy"),#
+    health = jnumber("goodHealth"),#
+    low_barking = jnumber("lowBarking"),#
+    smart = jnumber("intelligence"),#
+    trainable = jnumber("easyToTrain"),#
+    heat_tolerance = jnumber("toleratesHot"),#
+    cold_tolerance = jnumber("toleratesCold")#
+  ) %>% #
+  select(-document.id,-key,-array.index,-id)
+dogAttributesTbl <- #
+  dogAttributes %>%   #
+  gather_keys() %>%   #
+  gather_array() %>% #
+  spread_values(      #
+    id = jstring("id"),#
+    breedname = jstring("name"),#
+    size = jnumber("size"),#
+    kidFriendly = jnumber("kidFriendly"),#
+    dogFriendly = jnumber("dogFriendly"),#
+    shedding = jnumber("lowShedding"),#
+    grooming_ease = jnumber("easyToGroom"),#
+    energy = jnumber("highEnergy"),#
+    health = jnumber("goodHealth"),#
+    low_barking = jnumber("lowBarking"),#
+    smart = jnumber("intelligence"),#
+    trainable = jnumber("easyToTrain"),#
+    heat_tolerance = jnumber("toleratesHot"),#
+    cold_tolerance = jnumber("toleratesCold")#
+  ) %>% #
+  select(-document.id,-key,-array.index,-id)
+dogAttributesTbl <- #
+  dogAttributes %>%   #
+  gather_object() %>%   #
+  gather_array() %>% #
+  spread_values(      #
+    id = jstring("id"),#
+    breedname = jstring("name"),#
+    size = jnumber("size"),#
+    kidFriendly = jnumber("kidFriendly"),#
+    dogFriendly = jnumber("dogFriendly"),#
+    shedding = jnumber("lowShedding"),#
+    grooming_ease = jnumber("easyToGroom"),#
+    energy = jnumber("highEnergy"),#
+    health = jnumber("goodHealth"),#
+    low_barking = jnumber("lowBarking"),#
+    smart = jnumber("intelligence"),#
+    trainable = jnumber("easyToTrain"),#
+    heat_tolerance = jnumber("toleratesHot"),#
+    cold_tolerance = jnumber("toleratesCold")#
+  ) %>%
+select(-document.id,-key,-array.index,-id)
+rlang::last_error()
+select(-document.id,-object,-array.index,-id)
+select(-document.id,-array.index,-id)
+dogAttributesTblF <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/master/dogTraits.csv",stringsAsFactors = F)
+breedsTable <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/master/dogTable.csv",stringsAsFactors = FALSE, na.strings = "") %>%
+select(breedname=Breed,Abrev.,Clade)
+install.package(fuzzyjoin)
+install.packages(fuzzyjoin)
+install.packages("fuzzyjoin")
+library(fuzzyjoin)
+joinedTabs <- stringdist_left_join(breedsTable,dogAttributesTblF,max_dist=2)
+length(which(is.na(joinedTabs$breedname.y)==FALSE))
+dogsAttrFilt <- joinedTabs %>% filter(!is.na(breedname.y))
+setwd("~/Desktop/Evolution/Tasks/Task_10")
+library(phytools)
+desired_length<-100
+trees<-vector(mode="list", length=desired_length)
+births<-rep(NA, desired_length)
+fractions<-rep(NA, desired_length)
+str(trees)
